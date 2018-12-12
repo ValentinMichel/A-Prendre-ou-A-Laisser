@@ -113,6 +113,8 @@ def end():
             print("\033[31mDommage !\033[0m")
         else:
             print("\033[31mBien joué, vous avez gagné plus d'argent que votre boîte actuel.")
+    if len(boxOpen) == 15:
+        print("Vous avez ouvert toutes les boîtes, vous avez gagné un total de ",somme_Actuelle,"€")
     initialisation = False
 
 def name():
@@ -243,6 +245,8 @@ def jouer():
             del candidats_Exc[region]
             break
         numB += 1
+	if len(boxOpen) == 15:
+        end()
     banque_Intervention = len(boxOpen)
     if banque_Intervention == 3 or banque_Intervention == 6 or banque_Intervention == 7 or banque_Intervention == 9 or banque_Intervention == 11 or banque_Intervention == 12:
         banquier()
